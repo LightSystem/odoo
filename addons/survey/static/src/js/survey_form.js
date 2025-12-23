@@ -259,6 +259,7 @@ publicWidget.registry.SurveyFormWidget = publicWidget.Widget.extend(SurveyPreloa
         if (target.value === 'previous') {
             this._submitForm({ previousPageId: parseInt(target.dataset['previousPageId']) });
         } else if (target.value === 'next_skipped') {
+<<<<<<< 9864408dd1b6d40108f584aa1778d4cf890d4d59
             this._submitForm({ nextSkipped: true });
         } else if (target.value === 'finish' && !this.options.sessionInProgress) {
             // Adding pop-up before the survey is submitted when not in live session
@@ -275,6 +276,15 @@ publicWidget.registry.SurveyFormWidget = publicWidget.Widget.extend(SurveyPreloa
             this._submitForm({ isFinish: true });
         } else {
             this._submitForm({});
+||||||| 0fdb1b2c534ab8db558ab7d5d7c55f30e4a7b4c5
+            options.nextSkipped = true;
+        } else if (target.value === 'finish') {
+            options.isFinish = true;
+=======
+            options.nextSkipped = true;
+        } else if (target.value === 'finish' && !this.options.sessionInProgress) {
+            options.isFinish = true;
+>>>>>>> d96137c076105be37d05a6bdb2044b7dea6ee8c5
         }
     },
 
